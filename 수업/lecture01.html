@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: teal;
+      height: 300vh;
+    }
+    h1 {
+      font-size: 50px;
+      padding: 20px;
+    }
+    .box {width: 40px; height: 40px; background-color: black; position: absolute; 
+      transform: translate(-50%, -50%);
+      top:50%; left:50%;
+    }
+    
+  </style>
+  <script>
+    window.onload = () => {
+      const h1 = document.querySelector('h1');
+      const box = document.querySelector('.box');
+
+      window.addEventListener('click', (event) => {
+
+        console.log(event.pageY, event)
+
+        h1.innerText = `${event.pageX} ${event.pageY}`;
+        box.style.top = event.pageY + 'px';
+        box.style.left = event.pageX + 'px';
+      });
+    }
+  </script>
+</head>
+<body>
+  <h1>test</h1>
+  <div class="box">
+
+  </div>
+</body>
+</html>

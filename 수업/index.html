@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="number" value="" /> + 
+  <input type="number" value="" />
+  <h1 class="value">0</h1>
+  <button>더하기</button>
+
+  <script>
+    const inputNum = document.querySelectorAll('input[type="number"]');
+    const result = document.querySelector('h1');
+    const getRandomNumber = () => Math.floor(Math.random() * 1000000) + 1;
+
+    const sum = () => {
+      result.innerText = Number(inputNum[0].value) + Number(inputNum[1].value);
+    }
+
+    inputNum.forEach((item, _) => {
+      item.value = getRandomNumber();
+    });
+
+    sum();
+  </script>
+</body>
+</html>
